@@ -9,14 +9,23 @@ repositories {
 
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-    implementation 'io.quarkus:quarkus-rest'
     implementation 'io.quarkus:quarkus-arc'
+    implementation 'io.quarkus:quarkus-resteasy'
+
+        implementation 'org.jboss.resteasy:resteasy-client:6.2.0.Final'
+
+    //implementation 'io.quarkus:quarkus-hibernate-orm-panache'
+    //implementation 'io.quarkus:quarkus-jdbc-mysql'
+    implementation 'io.quarkus:quarkus-resteasy-jsonb'
+    implementation("io.quarkus:quarkus-smallrye-openapi")
+    implementation("io.quarkus:quarkus-swagger-ui")
+
+    // Adding Lombok dependencies
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
-    // SDK de PayPal Checkout
-    implementation 'com.paypal.sdk:checkout-sdk:1.0.3'
-    implementation 'io.quarkus:quarkus-smallrye-openapi'
-    implementation 'io.quarkus:quarkus-smallrye-openapi'
 }
 
 group 'org.acme'
